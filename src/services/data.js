@@ -31,3 +31,9 @@ export const schemaRegister = yup.object({
   phone: yup.number('Profavor ingrese un número valido').min(10, 'El número debe contener 10 digitos 2').positive().required('Porfavor ingresar su nombre completo'),
 
 });
+export const schemaLogin = yup.object({
+  email: yup.string().email('Porfavor ingrese un correo valido').required('Porfavor ingrese su correo'),
+  password: yup.string().required('Porfavor ingrese su contraseña').min(8, 'La contraseña debe contener minimo 8 caracteres').max(16, 'La contraseña debe contener maximo 16 caracteres.').matches(passwordRegex, {
+      message: "La contraseña al menos debe tener un valor numérico, una minúscula, una mayúscula y al menos un caracter no alfanumérico."
+  })
+})
