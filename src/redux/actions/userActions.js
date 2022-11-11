@@ -1,5 +1,6 @@
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
-import { auth } from "../../firebase/firebaseconfig";
+import { auth } from "../../firebase/firebaseConfig";
+
 import { userTypes } from "../types/userTypes";
 
 export const actionRegisterAsync = ({ email, password, name, avatar,phoneNumber }) => {
